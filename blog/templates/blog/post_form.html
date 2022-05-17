@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание записи</title>
+</head>
+<body>
+     <form style="display: flex; flex-direction: column; width: 500px" method="post" action="/blog/posts/create">
+        {% csrf_token %}
+         {{ post_form.title }}
+         {{ post_form.text }}
+    <button type="submit" style="width: 120px; height: 50px; font-size: 18px; cursor: pointer">Создать</button>
+</form>
+
+</body>
+</html>

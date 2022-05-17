@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добро пожаловать</title>
+</head>
+<body>
+    <h3>Вы успешно авторизовались</h3>
+    <a href="{% url 'user-detail' request.user.id %}">Посмотреть свой блог</a>
+
+
+</body>
+</html>

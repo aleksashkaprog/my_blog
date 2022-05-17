@@ -1,0 +1,21 @@
+version: '3'
+ 
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=djangodb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  my_blog:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:5000
+    container_name: blog
+    environment:
+      - DATABASE_URL
+    volumes:
+      - .:/code
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db

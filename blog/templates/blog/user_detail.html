@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный блог</title>
+</head>
+<body>
+    {% for p in user_detail.posts.all %}
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.text }}</p>
+        <p>{{ p.create_time }}</p>
+    {% endfor %}
+    {% if user_detail.id == request.user.id %}:
+        <form action="{% url 'post-create' %}" target="_blank" >
+                <button class="btn" style="margin-right: 20px; width: 120px; height: 50px; font-size: 18px; cursor: pointer">Добавить запись в блог</button>
+        </form>
+    {% endif %}
+
+
+</body>
+</html>
